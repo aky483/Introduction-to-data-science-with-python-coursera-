@@ -276,7 +276,8 @@ def plot9():
 def answer_ten():
     Top15 = answer_one()
     Top15['HighRenew'] = [1 if x >= Top15['% Renewable'].median() else 0 for x in Top15['% Renewable']]
-    return Top15['HighRenew'].sort_index(ascending=True)
+    Top15  = Top15.sort_values('Rank', ascending = True)
+    return Top15['HighRenew']
 
 answer_ten()
 
